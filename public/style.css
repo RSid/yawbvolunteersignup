@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+.team-info {
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+}
+
+form label {
+  padding: 10px;
+}
+
+.suggestions {
+  margin: 10px 0px;
+}
+
+#suggest {
+  margin: 10px 0px;
+}
+
+#name {
+  margin: 10px 0px;
+}
+
+#point {
+  margin: 10px 0px;
+}
+
+#foot {
+  text-align: center;
+}

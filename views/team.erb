@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Team Info</title>
+  <link rel="stylesheet" href="/style.css" />
+
 </head>
 <body>
 
 <h1><%= @team[1] %></h1>
-<p><%= @team[2] %></p>
-<p><%= @team[3] %></p>
-<p><%= @team[4] %></p>
+<p class='team-info'><%= "Team description: #{@team[2]}" %></p>
+<p class='team-info'><%= "Team lead: #{@team[3]}" %></p>
+<p class='team-info'><%= "Team lead contact information: #{@team[4]}" %></p>
 
-
+<h2>Team Volunteers</h2>
 <ul>
   <% if @team_info !=nil %>
     <% @team_info.each do |volunteer| %>
@@ -22,6 +24,7 @@
     <% end %>
 </ul>
 
+
 <p>Join team below!</p>
 
 <form action= <%= "/join-team/#{@team[0]}" %> method='post'>
@@ -31,13 +34,17 @@
     <label for="email">Email: </label>
     <input type="text" name="email" id="email" />
     <br>
+    <div class = "suggestions">
     <label for="suggest">Suggestions, comments, or concerns: </label>
-    <input type="text" name="suggest" id="suggest" />
+    <br>
+    <textarea name="suggest" id="suggest" rows="8" cols="60">
+    </textarea>
+    </div>
     <br>
     <input type="submit" value="Submit"/>
 </form>
 
-<p><a href="/">Home</a></p>
+<p id="foot"><a href="/">Home</a></p>
 
 </body>
 </html>

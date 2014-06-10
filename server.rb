@@ -1,19 +1,36 @@
 require 'pg'
-require 'shotgun'
-require 'pry'
-require 'sinatra'
-require 'sinatra/activerecord'
-require 'rake'
 
+require 'sinatra'
+
+
+configure :production do
+
+  set :db_connection_info, {
+    host: ENV['DB_HOST'],
+    dbname: ENV['DB_NAME'],
+    user: ENV['USER'],
+    password: ENV['PASSWORD']
+  }
+
+end
+
+configure :development do
+  set :db_connection_info, {dbname: 'yawb'}
+
+end
 
 def db_connection
   begin
-    connection = PG.connect(dbname: 'yawb')
+    connection = PG.connect(settings.db_connection_info)
+
     yield(connection)
+
   ensure
     connection.close
   end
 end
+
+
 
 def all_teams
   db_connection do |db|
@@ -55,7 +72,6 @@ end
 
 def add_volunteer_team(name,email,suggest,team_id)
   db_connection do |conn|
-    binding.pry
     if volunteer_in_db(email)[0]=='t'
       volunteer_id = conn.exec_params('SELECT id FROM volunteers WHERE email=$1',[email]).values.flatten[0]
       conn.exec_params('INSERT INTO volunteer_teams (volunteer_id,team_id,suggestion) VALUES ($1,$2,$3)',[volunteer_id,team_id,suggest])
