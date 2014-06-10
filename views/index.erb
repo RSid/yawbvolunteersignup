@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YAWB</title>
+</head>
+<body>
+
+<h1>Teams!</h1>
+
+<ul>
+<% @teams.each do |team| %>
+  <ul>
+    <li><a href = <%= "/team/#{team['id']}"%> ><%= team['name']%></a></li>
+    <li><%= team['description']%></li>
+    <li><%= team['point_person']%></li>
+    <li><%= team['point_person_email']%></li>
+  </ul>
+
+<% end %>
+</ul>
+
+<p>Make new team</p>
+
+<form action="/create-team" method='post'>
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" />
+    <br>
+    <label for="description">Description: </label>
+    <input type="text" name="description" id="description" />
+    <br>
+    <label for="point">Point person: </label>
+    <input type="text" name="point" id="point" />
+    <br>
+    <label for="email">Point person email: </label>
+    <input type="text" name="email" id="email" />
+    <br>
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>
