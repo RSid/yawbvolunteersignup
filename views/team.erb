@@ -8,17 +8,19 @@
 </head>
 <body>
 
+<div class='header'>
 <h1><%= @team[1] %></h1>
 <p class='team-info'><%= "Team description: #{@team[2]}" %></p>
 <p class='team-info'><%= "Team lead: #{@team[3]}" %></p>
 <p class='team-info'><%= "Team lead contact information: #{@team[4]}" %></p>
+
+</div>
 
 <h2>Team Volunteers</h2>
 <ul>
   <% if @team_info !=nil %>
     <% @team_info.each do |volunteer| %>
     <li><%= "#{volunteer[0]}: #{volunteer[1]}" %></li>
-    <ul><li><%= "#{volunteer[2]}" %></li></ul>
 
     <% end %>
     <% end %>

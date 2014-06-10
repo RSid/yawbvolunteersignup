@@ -7,13 +7,17 @@
 </head>
 <body>
 
+<div class='header'>
 <h1>Teams!</h1>
+</div>
 
-<ul>
+<ul >
 <% @teams.each do |team| %>
-  <ul>
+  <ul class="teams">
     <li><a href = <%= "/team/#{team['id']}"%> ><%= team['name']%></a></li>
     <li><%= team['description']%></li>
+    <br>
+    <li>Point person: </li>
     <li><%= team['point_person']%></li>
     <li><%= team['point_person_email']%></li>
   </ul>
@@ -21,7 +25,7 @@
 <% end %>
 </ul>
 
-<p>Make new team</p>
+<h2>Make new team</h2>
 
 <form action="/create-team" method='post'>
     <label for="name">Name: </label>

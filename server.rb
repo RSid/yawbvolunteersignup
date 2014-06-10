@@ -1,5 +1,6 @@
 require 'pg'
-
+require 'shotgun'
+require 'pry'
 require 'sinatra'
 
 

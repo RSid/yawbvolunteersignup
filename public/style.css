@@ -1,5 +1,16 @@
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin: none;
+  padding: none;
+}
+
 h1 {
   text-align: center;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+
+h2 {
+  padding: 0px 20px;
 }
 
 .team-info {
@@ -32,4 +43,24 @@ form label {
 
 #foot {
   text-align: center;
+}
+
+.teams {
+  padding: 15px 0px;
+  list-style: none;
+}
+
+.teams li a {
+  font-size: 1.5em;
+  color: black;
+}
+
+.teams li {
+  margin-bottom: 8px;
+}
+
+.header {
+  background-color: lightblue;
+  margin: 0px;
+  padding: 20px;
 }
