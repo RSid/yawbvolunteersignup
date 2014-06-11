@@ -65,3 +65,8 @@ form label {
   padding: 20px;
   border-bottom: 10px solid black;
 }
+
+#preamble {
+  text-align: center;
+  font-size: 1.3em;
+}
