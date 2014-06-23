@@ -52,8 +52,14 @@ form label {
 }
 
 .teams {
-  padding: 15px 0px;
+  padding: 15px 15px;
+  margin-bottom: 20px;
   list-style: none;
+  border: 3px solid lightgray;
+  outline: 1px solid #23D5DF;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .teams li a {
@@ -69,11 +75,11 @@ form label {
 .header {
   background-image: url('logo-multi.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center top;
   background-color: #FAF5E3;
   margin: 0px;
-  padding-bottom: 250px;
+  padding-bottom: 50px;
   height: 600px;
 /* border-bottom: 4px solid #5AC7DB; */
 }
