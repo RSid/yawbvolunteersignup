@@ -1,7 +1,6 @@
 require 'pg'
 require 'mail'
 require 'postmark'
-require 'pry'
 require 'sinatra'
 require 'dotenv'
 

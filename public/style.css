@@ -1,7 +1,3 @@
-@font-face {
-  font-family: Brannboll;
-  src: url(/YAWB_Fonts/Brannboll_Fet/BrannbollFet.ttf);
-}
 
 @font-face {
   font-family: Cabin;
@@ -9,7 +5,7 @@
 }
 
 body {
-  font-family: Brannboll, sans-serif;
+  font-family: Cabin, sans-serif;
   margin: 0px;
 
 }
