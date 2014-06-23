@@ -19,16 +19,7 @@
 </div>
 
 
-<h2>Team Volunteers</h2>
-<ul>
-  <% if @team_info !=nil %>
-        <% @team_info.each do |volunteer| %>
-            <li><%= "#{volunteer[0]}: #{volunteer[1]}" %></li>
-        <% end %>
-    <% end %>
-    <p>Join team below!</p>
-</ul>
-
+<h2>Team has <%= @team_info != nil ? @team_info.length : '0' %> Volunteers</h2>
 
 
 
