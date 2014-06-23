@@ -1,7 +1,11 @@
 require 'pg'
-
+require 'mail'
+require 'postmark'
+require 'pry'
 require 'sinatra'
+require 'dotenv'
 
+Dotenv.load
 
 configure :production do
 
@@ -89,6 +93,11 @@ get '/' do
   erb :index
 end
 
+get '/new-team' do
+
+  erb :new_team
+end
+
 post '/create-team' do
   name = params['name']
   description = params['description']
@@ -110,12 +119,40 @@ get '/team/:team_id' do
 end
 
 post '/join-team/:team_id' do
+
+  team_lead_email = team(params['team_id']).flatten[-1]
+
   name = params['name']
   email = params['email']
   team_id = params[:team_id]
   suggest = params['suggest']
 
   add_volunteer_team(name,email,suggest,team_id)
+
+  Mail.defaults do
+  delivery_method :smtp, {
+    :address => ENV['POSTMARK_SMTP_SERVER'],
+    :port => '25',
+    :domain => 'yawb-volunteer-signup.herokuapp.com',
+    :user_name => ENV['POSTMARK_API_KEY'],
+    :password => ENV['POSTMARK_API_KEY'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  end
+
+  volunteer_info = "Name: " + name + " Email: " + email + " Comments/suggestions: " + suggest
+
+  message = Mail.new do
+    from            'info@yesallwomenboston.org'
+    to              team_lead_email
+    subject         'New volunteer'
+    body            volunteer_info
+
+    delivery_method Mail::Postmark, :api_key => ENV['POSTMARK_API_KEY']
+  end
+
+  message.deliver
 
   redirect "/team/#{team_id}"
 end

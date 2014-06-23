@@ -1,12 +1,22 @@
+@font-face {
+  font-family: Brannboll;
+  src: url(/YAWB_Fonts/Brannboll_Fet/BrannbollFet.ttf);
+}
+
+@font-face {
+  font-family: Cabin;
+  src: url(/YAWB_Fonts/Cabin/Cabin-Regular-TTF.ttf);
+}
+
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Brannboll, sans-serif;
   margin: 0px;
 
 }
 
 h1 {
   text-align: center;
-  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  font-family: Cabin, sans-serif;
 }
 
 h2 {
@@ -57,16 +67,35 @@ form label {
 
 .teams li {
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .header {
-  background-color: lightblue;
+  background-image: url('logo-multi.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-color: #FAF5E3;
   margin: 0px;
-  padding: 20px;
-  border-bottom: 10px solid black;
+  padding-bottom: 250px;
+  height: 600px;
+/* border-bottom: 4px solid #5AC7DB; */
 }
 
 #preamble {
   text-align: center;
   font-size: 1.4em;
+}
+
+#registration-link {
+  font-size: .8em;
+  text-decoration: none;
+}
+
+#registration-link:hover {
+  color:red;
+}
+
+#make-team {
+  text-align: center;
 }

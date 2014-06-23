@@ -14,7 +14,9 @@
 <p id="preamble">We are planning a feminist rock rager! To learn more about our mission, and upcoming events, follow us on <a href="https://www.facebook.com/yesallwomenboston">Facebook</a> and <a href="https://twitter.com/yesallwomenbos">Twitter</a>.
 <br>
 <br>
-To join up with a volunteer team, click on the team's name and sign up through that team's page. Contact Alla Hoffman (sm1th303@gmail) with any site issues.</p>
+Want to help out? Check out our volunteer teams and sign up below.</p>
+
+<p>Contact Alla Hoffman (sm1th303@gmail) with any site issues.</p>
 
 <ul >
 <% @teams.each do |team| %>
@@ -25,28 +27,13 @@ To join up with a volunteer team, click on the team's name and sign up through t
     <li>Point person: </li>
     <li><%= team['point_person']%></li>
     <li><%= team['point_person_email']%></li>
+    <li><a href = <%= "/team/#{team['id']}"%> id = 'registration-link'>Register here!</a></li>
   </ul>
 
 <% end %>
 </ul>
 
-<h2>Make new team</h2>
-
-<form action="/create-team" method='post'>
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name" />
-    <br>
-    <label for="description">Description: </label>
-    <input type="text" name="description" id="description" />
-    <br>
-    <label for="point">Point person: </label>
-    <input type="text" name="point" id="point" />
-    <br>
-    <label for="email">Point person email: </label>
-    <input type="text" name="email" id="email" />
-    <br>
-    <input type="submit" value="Submit"/>
-</form>
+<a href="/new-team" id = 'make-team'><p>Make new team</p></a>
 
 </body>
 </html>
