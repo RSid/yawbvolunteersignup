@@ -75,13 +75,11 @@ form label {
 .header {
   background-image: url('logo-multi.png');
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
   background-position: center top;
   background-color: #FAF5E3;
   margin: 0px;
   padding-bottom: 50px;
   height: 600px;
-/* border-bottom: 4px solid #5AC7DB; */
 }
 
 #preamble {
@@ -100,4 +98,11 @@ form label {
 
 #make-team {
   text-align: center;
+}
+
+#team-info {
+  border-bottom: 3px solid lightgray;
+  outline-bottom: 1px solid #23D5DF;
+  border-top: 3px solid lightgray;
+  outline-top: 1px solid #23D5DF;
 }
