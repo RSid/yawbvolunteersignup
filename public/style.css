@@ -47,44 +47,47 @@ form label {
   margin: 10px 0px;
 }
 
-#foot {
-  text-align: center;
-}
-
-.teams {
-  padding: 15px 15px;
+.team {
+  padding: 20px;
   margin-bottom: 20px;
   list-style: none;
-  border: 3px solid lightgray;
-  outline: 1px solid #23D5DF;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.teams li a {
+.team li a {
   font-size: 1.5em;
   color: black;
 }
 
-.teams li {
+.team li {
   margin-bottom: 8px;
   text-align: center;
 }
 
 .header {
+  background-size: auto 350px;
   background-image: url('logo-multi.png');
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center;
   background-color: #FAF5E3;
   margin: 0px;
-  padding-bottom: 50px;
-  height: 600px;
+  padding-bottom: 55px;
+  padding-top: 40px;
+  height: 300px;
+  position: relative;
 }
 
 #preamble {
   text-align: center;
   font-size: 1.4em;
+  border-bottom: 3px solid #372719;
+  outline-bottom: 1px solid #23D5DF;
+  border-top: 3px solid #372719;
+  outline-top: 1px solid #23D5DF;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #registration-link {
@@ -96,13 +99,38 @@ form label {
   color:red;
 }
 
-#make-team {
+#nav-bar {
+  list-style: none;
+  background-color: #FAF5E3;
   text-align: center;
+  margin: 0px;
+  padding: 20px;
+
 }
 
+#nav-bar li {
+  display: inline;
+  padding: 15px;
+  margin-bottom: 10px;
+
+}
+
+#nav-bar li a {
+  color: #372719;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+#nav-bar li a:hover {
+  color: #FF611B;
+}
+
+
 #team-info {
-  border-bottom: 3px solid lightgray;
+  border-bottom: 3px solid #372719;
   outline-bottom: 1px solid #23D5DF;
-  border-top: 3px solid lightgray;
+  border-top: 3px solid #372719;
   outline-top: 1px solid #23D5DF;
 }
+
+

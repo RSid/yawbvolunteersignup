@@ -11,6 +11,12 @@
 <div class='header' id ='team-page'>
 </div>
 
+<ul id ="nav-bar">
+    <li><a href="http://www.yesallwomenboston.org/">Main Page</a></li>
+  <li><a href="/">Volunteer Home</a></li>
+  <li><a href="/new-team">New Team</a></li>
+</ul>
+
 <div id ="team-info">
     <h1><%= @team[1] %></h1>
     <p class='team-info'><%= "Team description: #{@team[2]}" %></p>
@@ -37,10 +43,9 @@
     </textarea>
     </div>
     <br>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Sign up"/>
 </form>
 
-<p id="foot"><a href="/">Home</a></p>
 
 </body>
 </html>

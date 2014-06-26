@@ -8,21 +8,26 @@
 <body>
 
 <div class='header'>
-
 </div>
 
-<h1>Yes All Women Boston Volunteer Teams!</h1>
-
-<p id="preamble">We are planning a feminist rock rager! To learn more about our mission, and upcoming events, follow us on <a href="https://www.facebook.com/yesallwomenboston">Facebook</a> and <a href="https://twitter.com/yesallwomenbos">Twitter</a>.
-<br>
-<br>
-Want to help out? Check out our volunteer teams and sign up below.</p>
+<ul id ="nav-bar">
+  <li><a href="http://www.yesallwomenboston.org/">Main Page</a></li>
+  <li><a href="/new-team">Create Team</a></li>
+</ul>
 
 
 
-<ul >
+<div id="preamble">
+<h1>Volunteer Sign-up</h1>
+  We are planning a feminist rock rager! To learn more about our mission, and upcoming events, follow us on <a href="https://www.facebook.com/yesallwomenboston">Facebook</a> and <a href="https://twitter.com/yesallwomenbos">Twitter</a>.
+  <br>
+  <br>
+  Want to help out? Check out our volunteer teams and sign up below.
+</div>
+
+<ul class='all-teams'>
 <% @teams.each do |team| %>
-  <ul class="teams">
+  <ul class="team">
     <li><a href = <%= "/team/#{team['id']}"%> ><%= team['name']%></a></li>
     <li><%= team['description']%></li>
     <br>
@@ -35,9 +40,6 @@ Want to help out? Check out our volunteer teams and sign up below.</p>
 <% end %>
 </ul>
 
-<a href="/new-team" id = 'make-team'><p>Make new team</p></a>
-
-<p id = 'foot'>Contact Alla Hoffman (sm1th303@gmail) with any site issues.</p>
 
 </body>
 </html>
